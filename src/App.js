@@ -19,7 +19,7 @@ export default class App extends React.Component {
     const newItem = {
       title,
       completed: false,
-      timeCreated: new Date(),
+      timeCreated: new Date().toString(),
       id: uuidv4()
     };
     this.setState(({ data }) => {

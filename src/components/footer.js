@@ -1,6 +1,7 @@
 import React from 'react';
 import '../components-style/footer.css';
 import TasksFilter from './tasksFilter';
+import PropTypes from 'prop-types';
 
 export default class Footer extends React.Component {
   render() {
@@ -18,3 +19,15 @@ export default class Footer extends React.Component {
     );
   }
 }
+
+Footer.defaultProps = {
+  tasksCompleted: 0,
+  filter: 'all'
+};
+
+Footer.propTypes = {
+  tasksCompleted: PropTypes.number.isRequired,
+  clearList: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  onFilterSelect: PropTypes.func.isRequired
+};

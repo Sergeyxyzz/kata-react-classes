@@ -27,7 +27,6 @@ module.exports = {
         endOfLine: 'auto'
       }
     ],
-    'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off'
   }
 };

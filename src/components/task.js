@@ -1,7 +1,8 @@
 import '../components-style/task.css';
 import { formatDistanceToNow } from 'date-fns';
-
+import PropTypes from 'prop-types';
 import React from 'react';
+
 export default class Task extends React.Component {
   render() {
     const { title, onDelete, onCompleted, completed, timeCreated } = this.props;
@@ -35,3 +36,17 @@ export default class Task extends React.Component {
     );
   }
 }
+
+Task.defaultProps = {
+  title: 'Tilte',
+  completed: false,
+  timeCreated: new Date()
+};
+
+Task.propTypes = {
+  title: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onCompleted: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  timeCreated: PropTypes.string.isRequired
+};

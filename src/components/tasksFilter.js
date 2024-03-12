@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TasksFilter extends React.Component {
   render() {
@@ -25,3 +26,15 @@ export default class TasksFilter extends React.Component {
     return <>{buttons}</>;
   }
 }
+
+TasksFilter.defaultProps = {
+  filter: 'all',
+  onFilterSelect: () => {
+    console.log('Filter selected');
+  }
+};
+
+TasksFilter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilterSelect: PropTypes.func.isRequired
+};
