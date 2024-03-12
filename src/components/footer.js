@@ -1,4 +1,3 @@
-// eslint-disable-next-line prettier/prettier
 import React from 'react';
 import '../components-style/footer.css';
 import TasksFilter from './tasksFilter';
@@ -8,7 +7,7 @@ export default class Footer extends React.Component {
     const { tasksCompleted, clearList, filter, onFilterSelect } = this.props;
     return (
       <footer className="footer">
-        <span className="todo-count">{tasksCompleted}</span>
+        <span className="todo-count">{tasksCompleted} items left</span>
         <ul className="filters">
           <TasksFilter filter={filter} onFilterSelect={onFilterSelect} />
         </ul>
